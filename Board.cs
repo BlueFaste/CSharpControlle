@@ -48,14 +48,23 @@ namespace Puissance4
                         break;
                     }
                 }
-
-                CheckBoardFull();
         }
 
-        private bool CheckBoardFull()
+        public bool CheckBoardFull()
         {
-            return false;
-
+            bool full = true;
+            for (var i = 0; i < 7; i++)
+                {
+                    for (var j = 0; j < 7; j++)
+                    {
+                        if (_board[i, j] == 0)
+                        {
+                            full = false;
+                            break;
+                        }
+                    }
+                }
+            return full;
         }
 
          private bool CheckColumnFull()

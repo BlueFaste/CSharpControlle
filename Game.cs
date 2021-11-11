@@ -34,19 +34,35 @@ namespace Puissance4
                 board.drawnBoard();
                 winner = board.checkIfWinRow();
                 if(winner !=0)
+                {
+                    Console.WriteLine($"Joueur {winner} a gagné");
                     break;
+                }
 
+                if(board.CheckBoardFull()){
+                    Console.WriteLine("Fin de lar partie, tableau rempli");
+                    break;
+                }
 
                 int columnP2 = player2.play();
 
                 board.AddJeton(columnP2, player2.currentPlayer);
                 winner = board.checkIfWinRow();
                 if(winner !=0)
+                {
+                    Console.WriteLine($"Joueur {winner} a gagné");
                     break;
+
+                }
+                
+                if(board.CheckBoardFull()){
+                    Console.WriteLine("Fin de la partie, tableau rempli");
+                    break;
+                }
                 
             }
 
-            Console.WriteLine($"Joueur {winner} a gagné");
+            
         }
     }
 }
