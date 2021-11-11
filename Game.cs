@@ -10,6 +10,7 @@ namespace Puissance4
             Board board = new Board();
             Player player1 = new Player(1);
             ManagePlayer player2;
+            int winner = 0;
            
         
             Console.WriteLine("Voulez-vous jouer contre l'ordinateur ? Y or N");
@@ -31,11 +32,21 @@ namespace Puissance4
                 board.AddJeton(columnP1, player1.currentPlayer);
 
                 board.drawnBoard();
+                winner = board.checkIfWinRow();
+                if(winner !=0)
+                    break;
+
+
                 int columnP2 = player2.play();
 
                 board.AddJeton(columnP2, player2.currentPlayer);
+                winner = board.checkIfWinRow();
+                if(winner !=0)
+                    break;
                 
             }
+
+            Console.WriteLine($"Joueur {winner} a gagné");
         }
     }
 }

@@ -61,5 +61,48 @@ namespace Puissance4
         {
             return false;
         }
+
+        public int checkIfWinRow()
+        {
+            int player1Win = 0;
+            int player2Win = 0;
+             for (var i = 0; i < 7; i++)
+            {
+                for (var j = 0; j < 7; j++)
+                {
+                    if (_board[i, j] == 0)
+                    {
+                        player1Win = 0;
+                        player2Win = 0;
+                    }
+                        
+                    else if (_board[i, j] == 1)
+                        {
+                        player1Win++;
+                        player2Win = 0;
+                    }
+                    else
+                        {
+                        player1Win = 0;
+                        player2Win++;
+                    }
+                    if(player1Win >= 4 || player2Win >= 4)
+                        break;
+                }
+                if(player1Win >= 4 || player2Win >= 4)
+                    break;
+
+                
+            }
+
+            Console.WriteLine(player1Win);
+            Console.WriteLine(player2Win);
+         Console.WriteLine(_board.ToString());
+            if (player1Win >= 4)
+                return 1;
+            else if (player2Win >=4)
+                return 2;
+            return 0;
+        }
     }
 }
