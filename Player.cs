@@ -5,12 +5,16 @@ namespace Puissance4
 {
     public class Player : ManagePlayer{
        
+        public Player(int currentPlayer){
+            this.currentPlayer = currentPlayer;
+       }
         public override int play(){
-            while (this.columnPlayed < 0 && this.columnPlayed > 6){
+            int columnPlayed = -1;
+            while (columnPlayed < 0 || columnPlayed > 6){
                 Console.WriteLine($"Joueur {currentPlayer}, en quelle colonne jouez-vous ?");
-                this.columnPlayed = Int32.Parse(Console.ReadLine());
+                columnPlayed = Int32.Parse(Console.ReadLine());
             }
-            return this.columnPlayed;
+            return columnPlayed;
            
         }
 

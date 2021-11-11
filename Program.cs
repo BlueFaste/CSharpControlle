@@ -3,12 +3,12 @@ using System.Text;
 
 namespace Puissance4
 {
-    class Program
+    class taMaman
     {
         private static int[,] _board = new int[7, 7];
         private static int _currentPlayer = 1;
 
-        static void Main(string[] args)
+        static void Boo(string[] args)
         {
             while (true)
             {

@@ -3,12 +3,13 @@ namespace Puissance4
 {
     public class Computer : ManagePlayer
     {
+
+         public Computer(int currentPlayer){
+            this.currentPlayer = currentPlayer;
+       }
         public override int play(){
-            while (this.columnPlayed < 0 && this.columnPlayed > 6){
-                Random rnd = new Random();
-                this.columnPlayed= rnd.Next(0, 7);
-            }
-            return this.columnPlayed;
+            Random rnd = new Random();
+            return rnd.Next(0, 7);
            
         }
     }
