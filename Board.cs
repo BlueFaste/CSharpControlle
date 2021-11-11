@@ -13,6 +13,7 @@ namespace Puissance4
             Console.Clear();
             Console.WriteLine(" 0 1 2 3 4 5 6 ");
             Console.WriteLine("┌─┬─┬─┬─┬─┬─┬─┐");
+
             for (var i = 0; i < 7; i++)
             {
                 var line = new StringBuilder("│");
@@ -92,12 +93,8 @@ namespace Puissance4
                 if(player1Win >= 4 || player2Win >= 4)
                     break;
 
-                
             }
 
-            Console.WriteLine(player1Win);
-            Console.WriteLine(player2Win);
-         Console.WriteLine(_board.ToString());
             if (player1Win >= 4)
                 return 1;
             else if (player2Win >=4)
