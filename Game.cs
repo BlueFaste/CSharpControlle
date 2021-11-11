@@ -10,7 +10,8 @@ namespace Puissance4
             Board board = new Board();
             Player player1 = new Player(1);
             ManagePlayer player2;
-            int winner = 0;
+            int winnerR = 0;
+            int winnerC = 0;
            
         
             Console.WriteLine("Voulez-vous jouer contre l'ordinateur ? Y or N");
@@ -32,10 +33,12 @@ namespace Puissance4
                 board.AddJeton(columnP1, player1.currentPlayer);
 
                 board.drawnBoard();
-                winner = board.checkIfWinRow();
-                if(winner !=0)
+                winnerR = board.checkIfWinRow();
+                winnerC = board.checkIfWinColumn();
+                if(winnerR !=0 || winnerC != 0)
                 {
-                    Console.WriteLine($"Joueur {winner} a gagné");
+                    int win = winnerR != 0 ? winnerR : winnerC;
+                    Console.WriteLine($"Joueur {win} a gagné");
                     break;
                 }
 
@@ -47,12 +50,14 @@ namespace Puissance4
                 int columnP2 = player2.play();
 
                 board.AddJeton(columnP2, player2.currentPlayer);
-                winner = board.checkIfWinRow();
-                if(winner !=0)
+                board.drawnBoard();
+                winnerR = board.checkIfWinRow();
+                winnerC = board.checkIfWinColumn();
+                if(winnerR !=0 || winnerC != 0)
                 {
-                    Console.WriteLine($"Joueur {winner} a gagné");
+                    int win = winnerR != 0 ? winnerR : winnerC;
+                    Console.WriteLine($"Joueur {win} a gagné");
                     break;
-
                 }
                 
                 if(board.CheckBoardFull()){
