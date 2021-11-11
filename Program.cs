@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Puissance4
 {
-    class taMaman
+    class test
     {
         private static int[,] _board = new int[7, 7];
         private static int _currentPlayer = 1;
