@@ -1,0 +1,4 @@
+Game.Tests.CheckWinTest.checkWinColumn
+Game.Tests.CheckWinTest.checkWinRow
+Game.Tests.ComputerTest.checkComputerPlay
+Game.Tests.PlayJetonTest.checkJetonPlace
