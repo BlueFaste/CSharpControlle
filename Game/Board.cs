@@ -6,7 +6,7 @@ namespace Puissance4
     public class Board
     {
         
-        private static int[,] _board = new int[7, 7];
+        public static int[,] _board = new int[7, 7];
 
         public void drawnBoard ()
         {
